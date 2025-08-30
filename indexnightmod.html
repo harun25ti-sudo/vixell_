@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Animasi - Estimator</title>
+  
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">Vixell Commision...</div>
+  <!-- Scroll Progress -->
+  <div id="progress-bar"></div>
+
+  <!-- Dark/Light Mode Toggle -->
+  <div id="toggle-mode">☀️</div>
+
+  <!-- Header -->
+  <header class="hidden">
+    <div><strong>Studio Animasi</strong></div>
+    <nav>
+      <a href="#portfolio">Portofolio</a>
+      <a href="#pricing">Harga</a>
+      
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+    <a href="#request" class="btn">Minta Estimasi</a>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero hidden">
+    <div>
+      <h1>🚀 Animasi Premium, Praktis & Terjangkau</h1>
+      <p>Harga jelas, fleksibel sesuai ide kamu. Input gambar buat diskusi, dan deal!.</p>
+      <div class="badges">
+        <span>Garansi Kualitas</span><span>Lead Time Jelas</span><span>Garansi Keterlambatan</span>
+      </div>
+    </div>
+    <div class="preview">
+  <img src="asset/Ouka_Shiunji_Anime.png" alt="Preview Portofolio" width="300"></div>
+  </section>
+
+  <!-- Portfolio (10 Testimonial/Portfolio Section) -->
+  <section id="portfolio" class="hidden">
+    <h2>Portofolio Kami</h2>
+    <p class="sub">Berikut beberapa project terbaru.</p>
+    <div class="cards" id="portfolio-list">
+      <div class="card">Animasi Opening & Closing Vtuber</div>
+      <div class="card">Konten Lainnya</div>
+      
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+<section id="portfolio" class="hidden">
+  <h2>Portofolio Kami</h2>
+  <p class="sub">Berikut beberapa project terbaru.</p>
+
+  <div class="slider-container">
+    <div class="slider">
+      
+      <!-- Slide 1 -->
+      <div class="slide">
+        <a href="https://www.instagram.com/p/DKm2xLASaDF/" target="_blank">
+          <img src="asset/Kuma_thumbnail.png" alt="Animasi Vtuber" width="300">
+        </a>
+        <p>Animasi Opening & Closing Vtuber</p>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide">
+        <a href="https://www.instagram.com/p/DKm2xLASaXY/" target="_blank">
+          <img src="asset/Other_thumbnail.png" alt="Konten Lainnya" width="300">
+        </a>
+        <p>Konten Lainnya</p>
+      </div>
+
+      <!-- Slide 1 -->
+      <div class="slide">
+        <a href="https://www.instagram.com/p/DKm2xLASaDF/" target="_blank">
+          <img src="asset/Kuma_thumbnail.png" alt="Animasi Vtuber" width="300">
+        </a>
+        <p>Animasi Opening & Closing Vtuber</p>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide">
+        <a href="https://www.instagram.com/p/DKm2xLASaXY/" target="_blank">
+          <img src="asset/Other_thumbnail.png" alt="Konten Lainnya" width="300">
+        </a>
+        <p>Konten Lainnya</p>
+      </div>
+
+      <marquee behavior="scroll" direction="left" scrollamount="4" onmouseover="this.stop();" onmouseout="this.start();">
+  <div class="slide"> ... </div>
+  <div class="slide"> ... </div>
+  <div class="slide"> ... </div>
+  <div class="slide"> ... </div>
+</marquee>
+
+
+        
+
+      <!-- Tambahkan slide lain sesuai kebutuhan -->
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  <!-- Pricing -->
+  <section id="pricing" class="hidden">
+    <h2>Kisaran Harga Transparan</h2>
+    <p class="sub">Harga final menyesuaikan detail proyek. Berikut gambaran cepat.</p>
+    <div class="cards" id="pricing-cards">
+      <!-- Bisa diubah manual -->
+      <div class="card"><h3>Sederhana</h3><p class="price">Rp 500.000+</p><ul><li>≤ 10 detik</li><li>1 karakter</li><li>Background simple</li></ul></div>
+      <div class="card"><h3>Menengah</h3><p class="price">Rp 1.000.000+</p><ul><li>≤ 30 detik</li><li>2 karakter</li><li>Background detail sedang</li></ul></div>
+      <div class="card"><h3>Kompleks</h3><p class="price">Rp 2.000.000+</p><ul><li>> 30 detik</li><li>Multi karakter</li><li>Background kompleks</li></ul></div>
+    </div>
+  </section>
+
+  <!-- Request Form -->
+  <section id="request" class="hidden">
+    <h2>Minta Estimasi Instan</h2>
+    <div class="grid-2">
+      <form id="estimatorForm">
+        <label>Nama<input type="text" name="name"></label>
+        <label>Durasi (detik)<input type="number" name="duration" value="10"></label>
+        <label>Style
+          <select name="style">
+            <option value="simple">Simple</option>
+            <option value="medium">Semi Realis</option>
+            <option value="complex">Detail Tinggi</option>
+          </select>
+        </label>
+        <label>Jumlah Karakter<input type="number" name="characters" value="1"></label>
+        <button type="button" class="btn glow" onclick="calc()">Hitung Estimasi</button>
+        <button type="button" class="btn" onclick="sendToInstagram()">Kirim ke Instagram DM</button>
+      </form>
+      <div class="estimator">
+        <p>Estimasi biaya:</p>
+        <div class="result" id="result">Rp 0</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="hidden">
+    <h2>Pertanyaan yang Sering Ditanya</h2>
+    <div class="faq">
+      <div class="faq-item"><strong>Apakah harga di estimator mengikat?</strong><br>Belum, itu hanya perkiraan awal.</div>
+      <div class="faq-item"><strong>File apa yang saya terima?</strong><br>MP4/H.264 Full HD, bisa juga GIF, MOV ProRes, PNG Sequence.</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="hidden">
+    <h2>Hubungi Kami</h2>
+    <div class="contact">
+      <div><p>Email:</p><a href="mailto:portfolio@studioanimasi.id">portfolio@studioanimasi.id</a></div>
+      <div><p>WhatsApp:</p><a href="https://wa.me/6282218200770">+62 822-1820-0770</a></div>
+      <div><p>Jam Operasional:</p><p>Senin–Jumat 09.00–18.00 WIB</p></div>
+    </div>
+  </section>
+
+  <footer class="hidden">© 2025 Studio Animasi. Semua hak cipta dilindungi.</footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/6282218200770" target="_blank" class="wa-btn">💬</a>
+
+  <script src="script.js" defer></script>
+
+</body>
+</html>

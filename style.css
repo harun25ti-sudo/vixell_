@@ -1,0 +1,215 @@
+    /* === Global Night Mode Styles === */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:"Segoe UI", Arial, sans-serif; }
+    body { background:#121212; color:#e0e0e0; line-height:1.6; scroll-behavior:smooth; }
+    a { color:#80dfff; text-decoration:none; transition:0.3s; }
+    a:hover { color:#fff; }
+
+    /* === Glow Neon Effect (1) === */
+    .glow { box-shadow:0 0 12px #00aaff; }
+
+    /* === Navbar === */
+    header { position:sticky; top:0; background:#1e1e1e; border-bottom:1px solid #333; padding:12px 20px; display:flex; justify-content:space-between; align-items:center; z-index:1000; }
+    nav a { margin:0 12px; font-size:14px; color:#ccc; }
+    nav a:hover { color:#80dfff; text-shadow:0 0 6px #00aaff; }
+    .btn { background:linear-gradient(90deg,#00aaff,#6a00ff); color:#fff; padding:10px 20px; border-radius:25px; font-size:14px; font-weight:bold; transition:0.3s; position:relative; overflow:hidden; }
+    .btn:hover { opacity:0.85; }
+
+    /* === Ripple Effect (2) === */
+    .btn::after {
+      content:"";
+      position:absolute;
+      background:rgba(255,255,255,0.5);
+      border-radius:50%;
+      width:0; height:0;
+      left:50%; top:50%;
+      transform:translate(-50%,-50%);
+      opacity:0;
+      transition:width 0.4s ease,height 0.4s ease,opacity 0.6s ease;
+    }
+    .btn:active::after {
+      width:200px; height:200px; opacity:0;
+      transition:0s;
+    }
+
+    /* === Scroll Progress Bar (6) === */
+    #progress-bar {
+      position:fixed; top:0; left:0;
+      height:5px; background:#00aaff;
+      width:0%; z-index:2000;
+    }
+
+    /* === Animasi FadeIn/SlideUp (untuk scroll reveal) === */
+    .hidden { opacity:0; transform:translateY(30px); transition:all 0.8s ease; }
+    .show { opacity:1; transform:translateY(0); }
+
+    /* === Hero Section (3 parallax) === */
+    .hero { 
+      max-width:1100px; margin:60px auto; display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; padding:0 20px; background:linear-gradient(to right,rgba(0,0,0,0.6),rgba(0,0,0,0.3)), url("asset/Ouka_Backgraund.jpg");
+      background-size:cover;
+      background-attachment:fixed;
+      border-radius:20px;
+      padding:60px;
+    }
+
+    .hero h1 { font-size:40px; font-weight:bold; margin-bottom:20px; color:#fff; }
+    .hero p { color:#ddd; margin-bottom:20px; }
+    .badges span { display:inline-block; background:#1f1f1f; border:1px solid #333; padding:6px 12px; border-radius:20px; margin:5px; font-size:12px; color:#80dfff; }
+    .preview { border:0px solid #333; background:#1c1c1c00; padding:30px; border-radius:16px; text-align:center; color:#777; }
+    .preview img {
+  max-width: 100%;     /* biar nggak keluar dari kotak */
+  height: auto;        /* biar proporsional */
+  display: block;      /* biar lebih rapih */
+  margin: 0 auto;      /* tengah */
+  
+  transform: rotate(-90deg); /* negatif = lawan jarum jam */
+}
+
+
+    /* === Sections umum === */
+    section { max-width:1100px; margin:80px auto; padding:0 20px; }
+    section h2 { font-size:28px; margin-bottom:15px; color:#fff; }
+    section p.sub { color:#aaa; margin-bottom:30px; }
+
+    /* === Pricing Cards (4 gradient accent + 5 tilt effect) === */
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px; }
+    .card { border:1px solid #333; border-radius:16px; padding:25px; background:#1c1c1c; transition:transform 0.3s ease; }
+    .card:hover { transform:perspective(800px) rotateY(5deg) rotateX(5deg) scale(1.03); border-color:#80dfff; }
+    .card h3 { font-size:20px; margin-bottom:12px; background:linear-gradient(90deg,#00aaff,#6a00ff); background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; 
+    }
+    .price { font-size:22px; font-weight:bold; margin-bottom:15px; color:#fff; }
+    .card ul { list-style:none; }
+    .card li { margin:6px 0; color:#bbb; }
+
+    /* === Form & Estimator === */
+    .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:25px; }
+    form label { display:block; margin-bottom:12px; }
+    form input, form select, form textarea { width:100%; padding:10px; border:1px solid #444; border-radius:8px; margin-top:6px; font-size:14px; background:#1a1a1a; color:#eee; }
+    form button { margin-top:10px; }
+    .estimator { border:1px solid #333; border-radius:16px; padding:25px; background:#1c1c1c; }
+    .estimator .result { font-size:26px; font-weight:bold; margin-top:15px; color:#80dfff; }
+
+    /* === FAQ & Contact === */
+    .faq { display:grid; gap:20px; }
+    .faq-item { border:1px solid #333; border-radius:12px; padding:18px; background:#1a1a1a; }
+    .faq-item strong { color:#80dfff; }
+    .contact { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; border:1px solid #333; border-radius:12px; padding:25px; background:#1a1a1a; }
+    .contact a { color:#80dfff; }
+
+    footer { text-align:center; font-size:13px; color:#666; margin:50px 0; }
+
+    /* === Floating WhatsApp Button (8) === */
+    .wa-btn {
+      position:fixed; bottom:20px; right:20px; background:#25d366; color:#fff; border-radius:50%; padding:15px; font-size:24px; 
+      box-shadow:0 0 12px rgba(0,0,0,0.5); z-index:1500;
+    }
+
+    /* === Dark/Light Mode Toggle (7) === */
+    #toggle-mode {
+      position:fixed; top:80px; right:20px; background:#444; color:#fff; padding:10px; border-radius:50%; cursor:pointer;
+      z-index:1500; box-shadow:0 0 8px #000;
+    }
+
+    /* === Loading Animation (9) === */
+    #loader {
+      position:fixed; top:0; left:0; right:0; bottom:0; background:#121212; display:flex; justify-content:center; align-items:center;
+      font-size:22px; font-weight:bold; color:#80dfff; z-index:3000;
+      animation:fadeOut 1s ease 2s forwards;
+    }
+    @keyframes fadeOut { to { opacity:0; visibility:hidden; } }
+
+    /* === Portfolio Slider === */
+.slider-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  border-radius: 16px;
+}
+
+.slider {
+  display: flex;
+  width: max-content;
+  animation: slide 20s infinite linear; /* lebih lambat (20 detik) */
+}
+
+.slide {
+  flex: 0 0 50%; /* tampilkan 2 slide sekaligus */
+  box-sizing: border-box;
+  padding: 15px;
+  margin: 5px;
+  background: #1c1c1c;
+  border: 1px solid #333;
+  border-radius: 16px;
+  text-align: center;
+  color: #fff;
+  transition: transform 0.3s;
+}
+
+.slide img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.slide:hover {
+  transform: scale(1.05);
+  border-color: #80dfff;
+}
+
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-50%); }
+  50%  { transform: translateX(-100%); }
+  75%  { transform: translateX(-150%); }
+  100% { transform: translateX(0); }
+}
+
+/* === Portfolio Slider === */
+.slider-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  border-radius: 16px;
+}
+
+.slider {
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite; /* jalan terus tanpa putus */
+}
+
+.slider-container:hover .slider {
+  animation-play-state: paused; /* pause kalau mouse diarahkan */
+}
+
+.slide {
+  flex: 0 0 50%; /* tampilkan 2 slide sekaligus */
+  box-sizing: border-box;
+  padding: 15px;
+  margin: 5px;
+  background: #1c1c1c;
+  border: 1px solid #333;
+  border-radius: 16px;
+  text-align: center;
+  color: #fff;
+  transition: transform 0.3s;
+}
+
+.slide img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.slide:hover {
+  transform: scale(1.05);
+  border-color: #80dfff;
+}
+
+/* animasi jalan terus (loop) */
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
